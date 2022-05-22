@@ -34,8 +34,8 @@ function App() {
       ) : (
         <div className="login">
           <SpotifyAuth
-            // redirectUri="https://spotify-app-five.vercel.app/callback"
-            redirectUri="http://localhost:3000/callback"
+            redirectUri="https://spotify-app-five.vercel.app/callback"
+            // redirectUri="http://localhost:3000/callback"
             clientID={process.env.REACT_APP_CLIENT_ID}
             scopes={[Scopes.userReadPrivate, "user-read-email"]}
             onAccessToken={(token) => setToken(token)}
