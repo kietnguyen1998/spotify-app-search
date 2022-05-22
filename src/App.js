@@ -18,9 +18,9 @@ function App() {
   const [token, setToken] = useState(Cookies.get("spotifyAuthToken"));
 
 
-  useEffect(() => {
-    navigate("/");
-  }, []);
+  // useEffect(() => {
+  //   navigate("/");
+  // }, []);
 
   return (
     <div className="App">
