@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+}
+
+.App {
+  height: 100vh;
+}
+
+.login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.login button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 200px;
+  padding: 20px 30px;
+  border-radius: 20px;
+
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login button:hover {
+  transition-duration: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0rem 20px white;
+}
+
+.login button svg {
+  width: 70px;
+  height: 70px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2f2f255;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(199, 199, 199);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}

@@ -1,0 +1,21 @@
+.logo {
+  position: relative;
+  z-index: 1000000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  color: white;
+  white-space: nowrap;
+}
