@@ -2,7 +2,6 @@ import "./homepage.css";
 
 import { useEffect, useRef, useState } from "react";
 import Logo from "../../components/Logo";
-import TextLoading from "../../components/TextLoading";
 import { useNavigate } from "react-router-dom";
 
 export default function Homepage() {
@@ -17,7 +16,6 @@ export default function Homepage() {
       navigate("/search?q=" + searchString);
     }
   }
-
   useEffect(() => {
     inputRef.current.focus();
     if (searchString !== "") {
@@ -34,16 +32,12 @@ export default function Homepage() {
       </div>
 
       <div className="homepage-input-wrapper">
-        <div className="mb-3">
-          <TextLoading textDisplay={["Artist", "Track"]} />
-        </div>
-
         <form onSubmit={navigateToDashboard}>
           <input
             ref={inputRef}
             type="text"
             className="homepage-input"
-            placeholder="Enter track or artist name"
+            placeholder="Enter artist name"
             onChange={(e) => setSearchString(e.target.value)}
           />
         </form>

@@ -9,13 +9,14 @@ function getTrack(tracks) {
   };
 }
 
-export function getTrackAsync(searchString) {
+export function getTrackAsync(id) {
   return async (dispatch) => {
     try {
-      const res = await trackApi.getAll(searchString);
+      const res = await trackApi.getAll(id);
       dispatch(getTrack(res.data));
+      console.log(res.data)
     } catch (error) {
-      console.log("chay vao catch");
+      console.log(error);
     }
   };
 }

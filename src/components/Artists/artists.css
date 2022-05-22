@@ -8,12 +8,13 @@
 
   height: 300px;
   text-align: center;
+  cursor: pointer;
 }
 
 .artist__infomation {
   position: relative;
   z-index: 1;
-  margin-top: 60%;
+  margin-top: 40%;
 }
 
 .artist__name {
@@ -28,6 +29,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
 .artist__genre-item {

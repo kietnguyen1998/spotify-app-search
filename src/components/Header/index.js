@@ -7,7 +7,7 @@ import Logo from "../Logo";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getArtistAsync } from "../../store/artist/action";
-import { getTrackAsync } from "../../store/track/action";
+// import { getTrackAsync } from "../../store/track/action";
 
 export default function Header() {
   const location = useLocation();
@@ -36,7 +36,6 @@ export default function Header() {
   useEffect(() => {
     if (initSearchString) {
       dispatch(getArtistAsync(initSearchString));
-      dispatch(getTrackAsync(initSearchString));
     }
   }, [initSearchString]);
 
@@ -57,7 +56,6 @@ export default function Header() {
         <i className="fa-solid fa-magnifying-glass header__search-icon"></i>
       </div>
 
-      {/* <button onClick={handleDispatch}>nhan vao day</button> */}
     </div>
   );
 }

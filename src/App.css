@@ -61,14 +61,14 @@ html {
   border-radius: 5px;
 }
 
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: rgb(199, 199, 199);
   border-radius: 5px;
   padding: 20px;
 }
 
-/* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
   background: #888;
 }

@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 
 export default function Tracks() {
   const tracks = useSelector((state) => state.Tracks.tracks.tracks);
-  // console.log("tracks trong tracks", tracks);
-  const tracksLimit = tracks?.limit;
+  console.log("tracks trong tracks", tracks);
 
-  const tracksSlice =
-    tracks?.items.length > 8 ? tracks?.items.slice(0, 8) : tracks?.items;
+  const tracksSlice = tracks?.length > 10 ? tracks?.slice(0, 8) : tracks;
 
   return (
-    <div className="row">
+    <>
+      <h1>Top tracks</h1>
+      <div className="row text-center">
         {tracksSlice ? (
           tracksSlice.map((track, index) => {
             return (
@@ -19,16 +19,17 @@ export default function Tracks() {
                   <img src={""} alt="" />
                 </div>
                 <div className="track-information">
-                  <p>{track.name}</p>
-                  <p>Ten tac gia</p>
+                  <p className="fs-4">{track.name}</p>
+
                   <audio controls src={track.preview_url}></audio>
                 </div>
               </div>
             );
           })
         ) : (
-          <p>Deu co ket qua nao</p>
+          <p>No match result</p>
         )}
       </div>
+    </>
   );
 }

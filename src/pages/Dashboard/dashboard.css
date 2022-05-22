@@ -6,10 +6,9 @@
 
 .dashboard-content {
   margin-top: 20px;
-  position: sticky;
+  /* position: sticky; */
   top: 100px;
   width: 1024px;
   height: 100%;
   height: 85vh;
-  overflow-y: scroll;
 }

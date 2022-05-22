@@ -1,19 +1,15 @@
-.background-video {
+
+
+
+.background{
+  background-image: url("../../assets//img/spotify-keeps-crashing.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  z-index: -1;
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-
-  object-fit: cover;
-  object-position: center center;
-
-  margin: 0 auto;
-  display: block;
-
-  pointer-events: none;
-
-  z-index: -1;
-
-  filter: brightness(0.4);
 }

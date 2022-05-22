@@ -1,12 +1,11 @@
 import axiosClient from "./axiosClient";
 
 const trackApi = {
-  getAll(searchValue) {
+  getAll(id) {
     const params = {
-      q: searchValue,
-      type: "track",
+      market: "ES",
     };
-    return axiosClient.get("/v1/search", {
+    return axiosClient.get(`/v1/artists/${id}/top-tracks`, {
       params,
     });
   },
