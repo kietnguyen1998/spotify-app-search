@@ -9,13 +9,13 @@ function getArtist(artist) {
   };
 }
 
-export function getArtistAsync(searchString) {
+export function getArtistAsync(searchString,token) {
   return async (dispatch) => {
     try {
-      const res = await artistApi.getAll(searchString);
+      const res = await artistApi.getAll(searchString,token);
       dispatch(getArtist(res.data));
     } catch (error) {
-      console.log("chay vao catch");
+      console.log(error);
     }
   };
 }

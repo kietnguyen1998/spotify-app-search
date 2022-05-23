@@ -1,11 +1,13 @@
 import "./artists.css";
 import { useDispatch, useSelector } from "react-redux";
+import Cookies from "js-cookie";
 
 import defaultAvatar from "../../assets/img/defaultAvatar.png";
 import { getTrackAsync } from "../../store/track/action";
 
 export default function Artists() {
   const dispatch = useDispatch();
+  const token = Cookies.get("spotifyAuthToken");
   const artists = useSelector((state) => state.Artists.artists.artists);
   const artistsSlice =
     artists?.items.length > 8 ? artists?.items.slice(0, 8) : artists?.items;
@@ -20,8 +22,8 @@ export default function Artists() {
           return (
             <div
               onClick={() => {
-                dispatch(getTrackAsync(artist.id));
-                window.scrollTo(0,1000)
+                dispatch(getTrackAsync(artist.id, token));
+                window.scrollTo(0, 1000);
               }}
               className="col col-3 mb-4"
               key={index}

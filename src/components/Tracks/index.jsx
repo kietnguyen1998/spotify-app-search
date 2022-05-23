@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 export default function Tracks() {
   const tracks = useSelector((state) => state.Tracks.tracks.tracks);
-  console.log("tracks trong tracks", tracks);
 
   const tracksSlice = tracks?.length > 10 ? tracks?.slice(0, 8) : tracks;
 

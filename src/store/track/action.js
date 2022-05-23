@@ -9,12 +9,11 @@ function getTrack(tracks) {
   };
 }
 
-export function getTrackAsync(id) {
+export function getTrackAsync(id,token) {
   return async (dispatch) => {
     try {
-      const res = await trackApi.getAll(id);
+      const res = await trackApi.getAll(id,token);
       dispatch(getTrack(res.data));
-      console.log(res.data)
     } catch (error) {
       console.log(error);
     }

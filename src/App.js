@@ -17,10 +17,13 @@ function App() {
   const navigate = useNavigate();
   const [token, setToken] = useState(Cookies.get("spotifyAuthToken"));
 
+  // const [token, setToken] = useState(
+  //   JSON.parse(localStorage.getItem("spotifyAuthToken"))
+  // );
 
-  // useEffect(() => {
-  //   navigate("/");
-  // }, []);
+  useEffect(() => {
+    navigate("/");
+  }, []);
 
   return (
     <div className="App">
@@ -34,8 +37,8 @@ function App() {
       ) : (
         <div className="login">
           <SpotifyAuth
-            redirectUri="https://spotify-app-five.vercel.app/callback"
-            // redirectUri="http://localhost:3000/callback"
+            // redirectUri="https://spotify-app-five.vercel.app/callback"
+            redirectUri="http://localhost:3000/callback"
             clientID={process.env.REACT_APP_CLIENT_ID}
             scopes={[Scopes.userReadPrivate, "user-read-email"]}
             onAccessToken={(token) => setToken(token)}

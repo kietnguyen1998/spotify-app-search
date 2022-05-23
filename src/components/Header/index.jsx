@@ -2,16 +2,18 @@ import "./header.css";
 
 import queryString from "query-string";
 import { useLocation, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 import Logo from "../Logo";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getArtistAsync } from "../../store/artist/action";
-// import { getTrackAsync } from "../../store/track/action";
 
 export default function Header() {
   const location = useLocation();
-  const initSearchString = queryString.parse(location.search).q;
+
+  var initSearchString = queryString.parse(location.search).q;
+
   const [searchString, setSearchString] = useState(initSearchString);
 
   const navigate = useNavigate();
@@ -32,12 +34,12 @@ export default function Header() {
       navigate(`/search`);
     }
   }, [searchString]);
-
+  const token = Cookies.get("spotifyAuthToken");
   useEffect(() => {
-    if (initSearchString) {
-      dispatch(getArtistAsync(initSearchString));
+    if (initSearchString && token) {
+      dispatch(getArtistAsync(initSearchString, token));
     }
-  }, [initSearchString]);
+  }, [initSearchString, Cookies.get("spotifyAuthToken")]);
 
   return (
     <div className="header ">
@@ -55,7 +57,6 @@ export default function Header() {
 
         <i className="fa-solid fa-magnifying-glass header__search-icon"></i>
       </div>
-
     </div>
   );
 }
