@@ -49,7 +49,7 @@ export default function Header() {
           <input
             type="text"
             className="header__search-input"
-            placeholder="Search track or artist"
+            placeholder="Enter artist name"
             value={searchString}
             onChange={(e) => setSearchString(e.target.value)}
           />
