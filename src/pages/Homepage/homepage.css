@@ -64,7 +64,6 @@
   box-shadow: 1px 1px 20px white;
 
   animation: icon-shadow 0.8s ease infinite;
-  /* animation-delay: 1s; */
 }
 
 .homepage-icon-go:hover {
